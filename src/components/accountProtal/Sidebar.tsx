@@ -1,8 +1,5 @@
 import React from "react";
 import {
-    FileText,
-    Wallet,
-    Store,
     X,
     Menu,
 } from "lucide-react";
@@ -31,10 +28,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             )}
 
             <aside
-                className={`fixed z-50 lg:static top-0 left-0 h-full w-64 bg-white shadow-md transform transition-transform duration-300 
-        ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-        lg:translate-x-0`}
-            >
+                className={`fixed z-50 lg:static top-0 left-0 h-full w-64 bg-white transform transition-transform duration-300 
+                ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
                 <div className="flex items-center gap-4 px-4 headerLogo">
                     <button className="mt-1">
                         <Menu width={24} height={24} color="#29343D" />
@@ -48,6 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <nav className="p-4 mt-3 space-y-4">
+                    <h4 className="text-[#98A4AE] text-sm font-manrope font-semibold ml-4">Main</h4>
                     <NavItem icon={<IDashboard width={20} height={20} fill="white" />} label="Dashboard" active />
                     <NavItem icon={<ISales />} label="Salaries" />
                     <NavItem icon={<ITex />} label="Taxes & Compliance" />
