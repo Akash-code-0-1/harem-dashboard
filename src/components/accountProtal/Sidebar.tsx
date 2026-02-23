@@ -26,7 +26,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                     onClick={onClose}
                 />
             )}
-
             <aside
                 className={`fixed z-50 lg:static top-0 left-0 h-full w-64 bg-white transform transition-transform duration-300 
                 ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
