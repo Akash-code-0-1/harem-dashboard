@@ -15,6 +15,7 @@ import ISales from "@/app/account-protal/svg/ISales";
 import ITex from "@/app/account-protal/svg/ITex";
 import IBudget from "@/app/account-protal/svg/IBudget";
 import IDeadline from "@/app/account-protal/svg/IDeadline";
+import Image from "next/image";
 
 const pagelineData = [
   { name: "Jan", value: 15000 },
@@ -44,7 +45,7 @@ const salonData = [
     pendingSalaries: 5,
     pendingTaxes: 2,
     status: "Over Budget",
-    statusColor: "bg-pink-100 text-pink-700",
+    statusColor: "bg-[#FF6692]",
   },
   {
     id: 2,
@@ -82,9 +83,9 @@ const activityData = [
     company: "Glamour Beauty",
     reason: "Reason: Incorrect gross amount calculation",
     time: "Oct 28, 10:01 AM",
-    icon: "💄",
+    icon: "/images/glamour-beauty.png",
     status: "High",
-    statusColor: "bg-red-100 text-red-700",
+    statusColor: "bg-[#FF6692]",
   },
   {
     id: 2,
@@ -92,9 +93,9 @@ const activityData = [
     company: "Style Studio",
     reason: "VAT Q3 2025 has been approved by owner",
     time: "Oct 28, 10:01 AM",
-    icon: "✂️",
+    icon: "/images/style-studio.png",
     status: "Low",
-    statusColor: "bg-green-100 text-green-700",
+    statusColor: "bg-[#36C76C]",
   },
   {
     id: 3,
@@ -102,9 +103,9 @@ const activityData = [
     company: "Glamour Beauty",
     reason: "Monthly budget exceeded by 15%",
     time: "Oct 28, 10:01 AM",
-    icon: "💄",
+    icon: "/images/glamour-beauty.png",
     status: "Medium",
-    statusColor: "bg-yellow-100 text-yellow-700",
+    statusColor: "bg-[#FFD648]",
   },
 ];
 
@@ -145,7 +146,7 @@ export default function Dashboard() {
         <div className="w-full max-w-sm p-6 rounded-lg bg-gradient-to-t from-[#F8FDFD] to-[#E1F9F8] font-manrope">
           <div className="flex items-center space-x-4">
             {/* Icon */}
-            <div className="w-[40px] h-[40px] bg-cyan-400 rounded-xl flex items-center justify-center text-white text-xl">
+            <div className="w-[40px] h-[40px] bg-[#16CDC7] rounded-xl flex items-center justify-center text-white text-xl">
               <ITex />
             </div>
             {/* Title */}
@@ -166,7 +167,7 @@ export default function Dashboard() {
         <div className="w-full max-w-sm p-6 rounded-lg bg-gradient-to-t from-[#FAFAFF] to-[#EBEAFF] font-manrope">
           <div className="flex items-center space-x-4">
             {/* Icon */}
-            <div className="w-[40px] h-[40px] bg-purple-500 rounded-xl flex items-center justify-center text-white text-xl">
+            <div className="w-[40px] h-[40px] bg-[#635BFF] rounded-xl flex items-center justify-center text-white text-xl">
               <IDeadline />
             </div>
             {/* Title */}
@@ -186,7 +187,7 @@ export default function Dashboard() {
         <div className="w-full max-w-sm p-6 rounded-lg bg-gradient-to-t from-[#FFFAFB] to-[#FFEBF1] font-manrope">
           <div className="flex items-center space-x-4">
             {/* Icon */}
-            <div className="w-[40px] h-[40px] bg-pink-500 rounded-xl flex items-center justify-center text-white text-xl">
+            <div className="w-[40px] h-[40px] bg-[#FF6692] rounded-xl flex items-center justify-center text-white text-xl">
               <IBudget />
             </div>
             {/* Title */}
@@ -207,25 +208,29 @@ export default function Dashboard() {
       {/* Middle Section - Activity and Salon Overview */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         {/* Recent Activity */}
-        <div className="bg-white rounded-lg p-6 border border-gray-200">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-gray-900">Recent Activity</h2>
-          </div>
+        <div className="bg-white rounded-lg p-6 border border-gray-200 font-manrope">
+          <div className="flex place-content-between">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-[16px] font-semibold text-[#29343D]">
+                Recent Activity
+              </h2>
+            </div>
 
-          {/* Filter Buttons */}
-          <div className="flex gap-2 mb-6 flex-wrap">
-            <button className="px-3 py-1 rounded-full text-sm border-2 border-purple-200 text-purple-600 font-medium">
-              All
-            </button>
-            <button className="px-3 py-1 rounded-full text-sm text-gray-600 font-medium hover:bg-gray-100">
-              High
-            </button>
-            <button className="px-3 py-1 rounded-full text-sm text-gray-600 font-medium hover:bg-gray-100">
-              Medium
-            </button>
-            <button className="px-3 py-1 rounded-full text-sm text-gray-600 font-medium hover:bg-gray-100">
-              Low
-            </button>
+            {/* Filter Buttons */}
+            <div className="flex gap-[10px] mb-6 flex-wrap font-manrope">
+              <button className="px-3 py-1 rounded-md text-[12px] border-1 border-[#635BFF] text-[#635BFF] font-medium">
+                All
+              </button>
+              <button className="px-3 py-1 rounded-md text-[12px] text-[#0A2540] border-1 border-[#EFF4FA] font-medium hover:bg-gray-100">
+                High
+              </button>
+              <button className="px-3 py-1 rounded-md text-[12px] text-[#0A2540] border-1 border-[#EFF4FA] font-medium hover:bg-gray-100">
+                Medium
+              </button>
+              <button className="px-3 py-1 rounded-md text-[12px] text-[#0A2540] border-1 border-[#EFF4FA] font-medium hover:bg-gray-100">
+                Low
+              </button>
+            </div>
           </div>
 
           {/* Activity Items */}
@@ -233,25 +238,41 @@ export default function Dashboard() {
             {activityData.map((item) => (
               <div
                 key={item.id}
-                className="flex gap-4 p-3 rounded-lg hover:bg-gray-50"
+                className="flex border-1 border-[#E0E6EB] gap-4 p-6 rounded-xl hover:bg-gray-50"
               >
-                <div className="text-3xl flex-shrink-0">{item.icon}</div>
+                <div className="mt-2">
+                  <Image
+                    src={item.icon}
+                    alt="Activity Icon"
+                    width={56} // Set your image width
+                    height={56} // Set your image height
+                    className="object-contain" // Optional: ensures the image scales properly
+                  />
+                </div>
+
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="font-medium text-gray-900">{item.title}</p>
-                      <p className="text-sm text-gray-500">{item.company}</p>
-                      <p className="text-xs text-gray-500 mt-1">
+                      <p className="font-semibold text-[16px] text-[#29343D]">
+                        {item.title}
+                      </p>
+                      <p className="text-sm text-[#635BFF]">{item.company}</p>
+                      <p className="text-sm text-[#526B7A] mt-1">
                         {item.reason}
                       </p>
                     </div>
-                    <span
-                      className={`px-2 py-1 rounded-full text-xs font-medium flex-shrink-0 ${item.statusColor}`}
-                    >
-                      {item.status}
-                    </span>
+
+                    <div className="text-right gap-2">
+                      <span
+                        className={`px-2 py-1 p-2 rounded-full text-white text-[12px] font-medium flex-shrink-0 ${item.statusColor}`}
+                      >
+                        {item.status}
+                      </span>
+                      <p className="text-[14px] text-[#526B7A] mt-4">
+                        {item.time}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-gray-400 mt-2">{item.time}</p>
                 </div>
               </div>
             ))}
@@ -261,8 +282,10 @@ export default function Dashboard() {
         {/* Salon Overview */}
         <div className="bg-white rounded-lg p-6 border border-gray-200">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-gray-900">Salon Overview</h2>
-            <button className="px-4 py-2 rounded-lg border border-purple-200 text-purple-600 text-sm font-medium hover:bg-purple-50">
+            <h2 className="text-[16px] font-semibold text-gray-900">
+              Salon Overview
+            </h2>
+            <button className="px-4 py-2 rounded-md border-1 border-[#635BFF] text-[#635BFF] text-[12px] font-medium hover:bg-purple-50">
               View All
             </button>
           </div>
@@ -272,18 +295,34 @@ export default function Dashboard() {
             {salonData.map((salon) => (
               <div
                 key={salon.id}
-                className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
+                className="flex items-center justify-between p-6 border-1 border-[#E0E6EB] bg-gray-50 rounded-xl"
               >
-                <div className="flex items-center gap-3">
-                  <div className="text-2xl">{salon.icon}</div>
-                  <div>
-                    <p className="font-medium text-gray-900">{salon.name}</p>
-                    <div className="flex gap-6 text-xs text-gray-600 mt-1">
-                      <span>{salon.pendingSalaries} Pending Salaries</span>
-                      <span>{salon.pendingTaxes} Pending Taxes</span>
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-2 text-center">
+                    {/* Salon Icon */}
+                    <div className="text-2xl">{salon.icon}</div>
+
+                    <div>
+                      {/* Salon Name */}
+                      <p className="font-medium text-gray-900">{salon.name}</p>
                     </div>
                   </div>
+                  <div className="flex gap-8 ml-24">
+                    {/* Pending Salaries and Pending Taxes */}
+                    <div className="flex flex-col text-center">
+                      <span>{salon.pendingSalaries}</span>
+                      <span>Pending Salaries</span>
+                    </div>
+
+                    <div className="flex flex-col text-center">
+                      <span>{salon.pendingTaxes}</span>
+                      <span>Pending Taxes</span>
+                    </div>
+                  </div>
+
                 </div>
+
+                {/* Status Label (e.g., Over Budget) */}
                 <span
                   className={`px-3 py-1 rounded-full text-xs font-medium ${salon.statusColor}`}
                 >
